@@ -1,2 +1,2 @@
-# LSkript
-The Official LightningSkript Repo
+# LightningSkript
+Currently working on initializing the project.
