@@ -1,0 +1,21 @@
+#!/usr/bin/php -q
+
+<?php
+
+function install($programpre) {
+
+        $program = str_replace(array("\n", "\r"), '', $programpre);
+
+        echo 'Attempting to Install "' . $program . '"';
+
+        exec('brew install ' . $program . ' >/dev/null 2>/dev/null', $output, $return);
+
+        if (!$return) {
+            echo "\n\n\n" . '[SUCCESS] "' . $program . '" Installed' . "\n\n\n";
+        } else {
+            echo "\n\n" . '[ERROR] "' . $program . '" Installation Failed' . "\n\n";
+        }
+
+    }
+
+install($_SERVER["argv"][1]);
