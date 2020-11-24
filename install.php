@@ -34,12 +34,12 @@ function install($programpre, $user) {
     // exec('sudo touch ' . exec('echo ~') . '/LSkript/run.php');
 
     // exec('echo alias skr="sudo php ' . exec('echo ~') . '/LSkript/run.php" > ~/.bash_profile');
-    exec('echo alias skr="sudo php ' . exec('echo ~') . '/LSkript/lskript.php" > ~/.bash_profile');
+    // exec('echo alias skr="php ' . exec('echo ~') . '/LSkript/lskript.php" > ~/.bash_profile');
     // exec('sudo echo "<?php echo Test;" >~/Documents/lskript/run.php');
     // $file = exec('echo ~') . '/LSkript/run.php';
     // file_put_contents($file, '<?php echo "Test\n";');
 
-    exec('sudo wget https://raw.githubusercontent.com/LSkript/LSkript/unstable/lskript.php -P ~/LSkript/lskript.php');
+    exec('sudo wget https://raw.githubusercontent.com/LSkript/LSkript/unstable/lskr -P /usr/bin');
 
     /* Define STDIN in case if it is not already defined by PHP for some reason */
     if(!defined("STDIN")) {
