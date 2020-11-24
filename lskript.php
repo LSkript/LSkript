@@ -16,7 +16,7 @@ function install($programpre, $user) {
 
         echo 'Attempting to Install "' . $program . '"';
 
-        exec('su -u ' . $user . ' brew install ' . $program . ' >/dev/null 2>/dev/null', $output, $return);
+        exec('brew install ' . $program . ' >/dev/null 2>/dev/null', $output, $return);
 
         if (!$return) {
             echo "\n\n\n" . '[SUCCESS] "' . $program . '" Installed' . "\n\n\n";
@@ -26,7 +26,7 @@ function install($programpre, $user) {
 
     }
 
-    install($_SERVER["argv"][1]);
+    install($_SERVER["argv"][1], $user);
 
     /*
 

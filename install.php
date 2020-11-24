@@ -16,7 +16,7 @@ function install($programpre, $user) {
 
         echo 'Attempting to Install "' . $program . '"';
 
-        exec('su -u ' . $user . ' brew install ' . $program . ' >/dev/null 2>/dev/null', $output, $return);
+        exec('brew install ' . $program . ' >/dev/null 2>/dev/null', $output, $return);
 
         if (!$return) {
             echo "\n\n\n" . '[SUCCESS] "' . $program . '" Installed' . "\n\n\n";
@@ -28,15 +28,18 @@ function install($programpre, $user) {
 
 
 
-    install('wget');
+    install('wget', $user);
 
-    exec('sudo mkdir ' . exec('echo ~') . '/LSkript');
-    exec('sudo touch ' . exec('echo ~') . '/LSkript/run.php');
+    // exec('sudo mkdir ' . exec('echo ~') . '/LSkript');
+    // exec('sudo touch ' . exec('echo ~') . '/LSkript/run.php');
 
-    exec('echo alias skr="sudo php ' . exec('echo ~') . '/LSkript/run.php" > ~/.bash_profile');
+    // exec('echo alias skr="sudo php ' . exec('echo ~') . '/LSkript/run.php" > ~/.bash_profile');
+    exec('echo alias skr="sudo php ' . exec('echo ~') . '/LSkript/lskript.php" > ~/.bash_profile');
     // exec('sudo echo "<?php echo Test;" >~/Documents/lskript/run.php');
-    $file = exec('echo ~') . '/LSkript/run.php';
-    file_put_contents($file, '<?php echo "Test\n";');
+    // $file = exec('echo ~') . '/LSkript/run.php';
+    // file_put_contents($file, '<?php echo "Test\n";');
+
+    exec('sudo wget https://raw.githubusercontent.com/LSkript/LSkript/unstable/lskript.php -P ~/LSkript/lskript.php');
 
     /* Define STDIN in case if it is not already defined by PHP for some reason */
     if(!defined("STDIN")) {
