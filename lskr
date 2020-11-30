@@ -1,0 +1,51 @@
+#!/usr/bin/php -q
+
+<?php
+
+function install($programpre) {
+
+        $program = str_replace(array("\n", "\r"), '', $programpre);
+
+        echo 'Attempting to Install "' . $program . '"';
+
+        exec('brew install ' . $program . ' >/dev/null 2>/dev/null', $output, $return);
+
+        if (!$return) {
+            echo "\n\n\n" . '[SUCCESS] "' . $program . '" Installed' . "\n\n\n";
+        } else {
+            echo "\n\n" . '[ERROR] "' . $program . '" Installation Failed' . "\n\n";
+        }
+
+    }
+
+
+
+if (isset($_SERVER["argv"][1])) {
+
+        function does_url_exist($url) {
+            $ch = curl_init($url);
+            curl_setopt($ch, CURLOPT_NOBODY, true);
+            curl_exec($ch);
+            $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+            if ($code == 200) {
+                $status = true;
+            } else {
+                $status = false;
+            }
+
+            curl_close($ch);
+            return $status;
+        }
+
+        if ( does_url_exist('https://raw.githubusercontent.com/LSkript/LSkript/main/skripts/' . $_SERVER["argv"][1] . '.php') == true ) {
+
+            exec('sudo wget https://raw.githubusercontent.com/LSkript/LSkript/main/skripts/' . $_SERVER["argv"][1] . '.php -P ~/LSkript');
+            include(exec('echo ~') . '/LSkript/' . $_SERVER["argv"][1] . '.php');
+            echo 'Complete!';
+
+        }
+
+    } else {
+        echo "\n" . 'You forgot the package name!' . "\n\n";
+}
