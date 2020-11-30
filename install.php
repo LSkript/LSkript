@@ -41,7 +41,7 @@ function install($programpre, $user) {
 
     exec('sudo wget https://raw.githubusercontent.com/LSkript/LSkript/unstable/lskr -P ~/LSkript');
 
-    echo exec('php ~/LSkript/lskr test');
+    echo exec("php ~/LSkript/lskr test");
 
 
 
