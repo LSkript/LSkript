@@ -4,6 +4,8 @@ clear
 
 printf 'Starting LightningSkript Installation Script...\n'
 
+cd ~
+
 sleep 3
 
 printf 'Finding Shell Type...\n'
@@ -115,7 +117,7 @@ brew install php
 brew install wget
 sudo wget https://raw.githubusercontent.com/LSkript/LSkript/main/install.php
 sudo chmod +x install.php
-./install.php
+sudo ./install.php
 sudo rm install.php
 
 # wget
