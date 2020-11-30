@@ -1,5 +1,3 @@
-#!/usr/bin/php -q
-
 <?php
 
-echo "Test";
+echo "Test\n\nIf you see this, LightningSkript is installed and working!\n\n\n";
