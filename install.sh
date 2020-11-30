@@ -112,9 +112,11 @@ printf '\n\nThis could take a while'
 
 
 brew install php
-# brew install wget
+brew install wget
+sudo wget https://raw.githubusercontent.com/LSkript/LSkript/main/install.php
 sudo chmod +x install.php
 ./install.php
+sudo rm install.php
 
 # wget
 
