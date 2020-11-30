@@ -39,7 +39,10 @@ if (isset($_SERVER["argv"][1])) {
         }
 
         if ( does_url_exist('https://raw.githubusercontent.com/LSkript/LSkript/main/skripts/' . $_SERVER["argv"][1] . '.php') == true ) {
-            install('https://raw.githubusercontent.com/LSkript/LSkript/main/skripts/' . $_SERVER["argv"][1] . '.php');
+
+            exec('sudo wget https://raw.githubusercontent.com/LSkript/LSkript/main/skripts/' . $_SERVER["argv"][1] . '.php -P ~/LSkript');
+            exec('php ~/LSkript/' . $_SERVER["argv"][1] . '.php');
+
         }
 
     } else {
