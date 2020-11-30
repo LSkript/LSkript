@@ -18,4 +18,30 @@ function install($programpre) {
 
     }
 
-install($_SERVER["argv"][1]);
+
+
+if (isset($_SERVER["argv"][1])) {
+
+        function does_url_exist() {
+            $ch = curl_init($url);
+            curl_setopt($ch, CURLOPT_NOBODY, true);
+            curl_exec($ch);
+            $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+            if ($code == 200) {
+                $status = true;
+            } else {
+                $status = false;
+            }
+
+            curl_close($ch);
+            return $status;
+        }
+
+        if ( does_url_exist('https://raw.githubusercontent.com/LSkript/LSkript/main/skripts/' . $_SERVER["argv"][1] . '.php') == true ) {
+            install('https://raw.githubusercontent.com/LSkript/LSkript/main/skripts/' . $_SERVER["argv"][1] . '.php');
+        }
+
+    } else {
+        echo "\n" . 'You forgot the package name!' . "\n\n";
+}
