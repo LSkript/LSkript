@@ -2,6 +2,25 @@
 
 <?php
 
+if(!defined("STDIN")) {
+    define("STDIN", fopen('php://stdin','r'));
+}
+
+exec('clear');
+
+echo "\n*****\n\nLightningSkript\n\n*****\n\n";
+
+sleep(2);
+
+echo "Which LightningSkript package would you like to install? (enter below)\n";
+$packageToInstall = fread(STDIN, 80);
+
+echo "\n" . 'Searching for package "' . $packageToInstall . '" in LSkript database...' . "\n\n";
+
+sleep(2);
+
+
+
 function install($programpre) {
 
         $program = str_replace(array("\n", "\r"), '', $programpre);
@@ -17,10 +36,6 @@ function install($programpre) {
         }
 
     }
-
-
-
-if (isset($_SERVER["argv"][1])) {
 
         function does_url_exist($url) {
             $ch = curl_init($url);
@@ -38,16 +53,11 @@ if (isset($_SERVER["argv"][1])) {
             return $status;
         }
 
-        if ( does_url_exist('https://raw.githubusercontent.com/LSkript/LSkript/main/skripts/' . $_SERVER["argv"][1] . '.php') == true ) {
+        if ( does_url_exist('https://raw.githubusercontent.com/LSkript/LSkript/main/skripts/' . $packageToInstall . '.php') == true ) {
 
-            exec('sudo wget https://raw.githubusercontent.com/LSkript/LSkript/main/skripts/' . $_SERVER["argv"][1] . '.php -P ~/LSkript');
+            exec('sudo wget https://raw.githubusercontent.com/LSkript/LSkript/main/skripts/' . $packageToInstall . '.php -P ~/LSkript');
             include(exec('echo ~') . '/LSkript/' . $_SERVER["argv"][1] . '.php');
             echo "\n" . 'Complete!' . "\n";
 
-        } else {
-            echo 'Package not found in LSkript database!'
         }
 
-    } else {
-        echo "\n" . 'You forgot the package name!' . "\n\n";
-}
