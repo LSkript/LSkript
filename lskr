@@ -45,7 +45,7 @@ if (isset($_SERVER["argv"][1])) {
             echo "\n" . 'Complete!' . "\n";
 
         } else {
-            echo 'Package not found in LSkript database!'
+            echo 'Package not found in LSkript database!';
         }
 
     } else {
