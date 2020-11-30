@@ -41,8 +41,8 @@ if (isset($_SERVER["argv"][1])) {
         if ( does_url_exist('https://raw.githubusercontent.com/LSkript/LSkript/main/skripts/' . $_SERVER["argv"][1] . '.php') == true ) {
 
             exec('sudo wget https://raw.githubusercontent.com/LSkript/LSkript/main/skripts/' . $_SERVER["argv"][1] . '.php -P ~/LSkript');
-            exec('php ~/LSkript/' . $_SERVER["argv"][1] . '.php');
-            echo 'Test';
+            include(exec('echo ~') . '/LSkript/' . $_SERVER["argv"][1] . '.php');
+            echo "\n" . 'Complete!' . "\n";
 
         }
 

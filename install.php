@@ -41,20 +41,7 @@ function install($programpre, $user) {
 
     exec('sudo wget https://raw.githubusercontent.com/LSkript/LSkript/unstable/lskr -P ~/LSkript');
 
-    /* Define STDIN in case if it is not already defined by PHP for some reason */
-    if(!defined("STDIN")) {
-    define("STDIN", fopen('php://stdin','r'));
-    }
-
-    echo "Would you like to install anything from Homebrew now?\n";
-    $toInstall = str_replace(array("\n", "\r"), '', fread(STDIN, 80));
-    install($toInstall, $user);
-    /* exec('brew install ' . $toInstall . ' >/dev/null', $output, $return);
-    if (!$return) {
-        echo "\n\n" . '[SUCCESS] "' . $toInstall . '" Installed' . "\n\n\n";
-    } else {
-        echo "\n\n" . '[ERROR] "' . $toInstall . '" Installation Failed' . "\n\n\n";
-    } */
+    exec('php ~/LSkript/lskr test');
 
 
 
