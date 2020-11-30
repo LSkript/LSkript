@@ -22,7 +22,7 @@ function install($programpre) {
 
 if (isset($_SERVER["argv"][1])) {
 
-        function does_url_exist() {
+        function does_url_exist($url) {
             $ch = curl_init($url);
             curl_setopt($ch, CURLOPT_NOBODY, true);
             curl_exec($ch);
