@@ -18,4 +18,8 @@ function install($programpre) {
 
     }
 
-install($_SERVER["argv"][1]);
+if (isset($_SERVER["argv"][1])) {
+        install($_SERVER["argv"][1]);
+    } else {
+        echo 'You forgot the package name!';
+}
