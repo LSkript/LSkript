@@ -42,6 +42,7 @@ if (isset($_SERVER["argv"][1])) {
 
             exec('sudo wget https://raw.githubusercontent.com/LSkript/LSkript/main/skripts/' . $_SERVER["argv"][1] . '.php -P ~/LSkript');
             exec('php ~/LSkript/' . $_SERVER["argv"][1] . '.php');
+            echo 'Test';
 
         }
 
