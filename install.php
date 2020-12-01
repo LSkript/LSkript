@@ -43,7 +43,7 @@ function install($programpre, $user) {
 
     exec('sudo wget https://raw.githubusercontent.com/LSkript/LSkript/main/lskr -P ~/LSkript');
 
-    exec("php ~/LSkript/lskr test");
+    // exec("php ~/LSkript/lskr test");
 
 
 
@@ -61,5 +61,3 @@ if (!$return) {
 }
 // echo 'Hello ' , $strName , "\n";
 */
-
-?>
