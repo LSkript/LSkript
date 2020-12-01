@@ -43,10 +43,12 @@ if (isset($_SERVER["argv"][1])) {
             echo 'Downloading Package...' . "\n\n";
             sleep(1);
             exec('sudo wget https://raw.githubusercontent.com/LSkript/LSkript/main/skripts/' . $_SERVER["argv"][1] . '.php -P ~/LSkript');
+            sleep(2);
             echo "\n" . '*****' . "\n\n" . 'Executing Package Payload...' . "\n\n" . '*****' . "\n\n";
-            sleep(1);
+            sleep(3);
             include(exec('echo ~') . '/LSkript/' . $_SERVER["argv"][1] . '.php');
-            echo "\n" . 'Package Installation Complete! Thanks for using LightningSkript!' . "\n";
+            sleep(2);
+            echo "\n\n" . 'Package Installation Complete! Thanks for using LightningSkript!' . "\n\n";
 
         } else {
             echo 'Package not found in LSkript database!' . "\n" . 'Try "brew install ' . $_SERVER["argv"][1] . '"' . "\n\n";
