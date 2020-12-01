@@ -13,7 +13,7 @@ printf 'Finding Shell Type...\n'
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 
   # Linux
-  printf "It looks like you are using Linux\nNow installing php-curl for proper compatibility...";
+  printf "It looks like you are using Linux\nNow installing php-curl for proper compatibility...\n\n";
   sudo apt update
   sudo apt install php-curl
 
@@ -84,7 +84,7 @@ clear
 
 if [[ $MACOS == 1 ]]; then
 
-printf '*****\nInstalling Homebrew (This may require you to intervene)\n\n*****'
+printf '*****\nInstalling Homebrew (This may require you to intervene)\n\n*****\n\n\n'
 
 sleep 3
 
@@ -117,6 +117,7 @@ printf '\n\nThis could take a while'
 
 brew install php
 brew install wget
+brew install figlet
 sudo wget https://raw.githubusercontent.com/LSkript/LSkript/main/install.php
 sudo chmod +x install.php
 sudo ./install.php

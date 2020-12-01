@@ -10,7 +10,12 @@
 
 $user = exec('echo $USER');
 
-function install($programpre, $user) {
+exec('clear');
+echo "\n";
+exec('figlet -f slant LSkript');
+sleep(3);
+
+function install($programpre) {
 
         $program = str_replace(array("\n", "\r"), '', $programpre);
 
@@ -28,7 +33,7 @@ function install($programpre, $user) {
 
 
 
-    install('wget', $user);
+    install('wget');
 
     // exec('sudo mkdir ' . exec('echo ~') . '/LSkript');
     // exec('sudo touch ' . exec('echo ~') . '/LSkript/run.php');
