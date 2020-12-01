@@ -29,7 +29,6 @@ function install($programpre, $user) {
 
 
     install('wget', $user);
-    install('php-curl', $user);
 
     // exec('sudo mkdir ' . exec('echo ~') . '/LSkript');
     // exec('sudo touch ' . exec('echo ~') . '/LSkript/run.php');

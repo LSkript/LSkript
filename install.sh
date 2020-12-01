@@ -13,7 +13,9 @@ printf 'Finding Shell Type...\n'
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 
   # Linux
-  printf "It looks like you are using Linux";
+  printf "It looks like you are using Linux\nNow installing php-curl for proper compatibility...";
+  sudo apt update
+  sudo apt install php-curl
 
 elif [[ "$OSTYPE" == "darwin"* ]]; then
 
