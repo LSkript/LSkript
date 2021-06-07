@@ -8,7 +8,7 @@ function install($programpre) {
 
         echo 'Attempting to Install "' . $program . '"';
 
-        exec('brew install ' . $program . ' >/dev/null 2>/dev/null', $output, $return);
+        exec('apt install ' . $program . ' >/dev/null 2>/dev/null', $output, $return);
 
         if (!$return) {
             echo "\n\n\n" . '[SUCCESS] "' . $program . '" Installed' . "\n\n\n";
@@ -40,10 +40,10 @@ if (isset($_SERVER["argv"][1])) {
 
         if ( does_url_exist('https://raw.githubusercontent.com/LSkript/LSkript/main/skripts/' . $_SERVER["argv"][1] . '.php') == true ) {
 
-            exec('sudo rm ' . '~/LSkript/' . $_SERVER["argv"][1] . '.php');
+            exec('sudo rm ' . '~/LSkript/' . $_SERVER["argv"][1] . '.php &>/dev/null');
             echo 'Downloading Package...' . "\n\n";
             sleep(1);
-            exec('sudo wget https://raw.githubusercontent.com/LSkript/LSkript/main/skripts/' . $_SERVER["argv"][1] . '.php -P ~/LSkript');
+            exec('sudo wget https://raw.githubusercontent.com/LSkript/LSkript/main/skripts/' . $_SERVER["argv"][1] . '.php -P ~/LSkript &>/dev/null');
             sleep(2);
             echo "\n" . '*****' . "\n\n" . 'Executing Package Payload...' . "\n\n" . '*****' . "\n\n";
             sleep(3);
@@ -52,7 +52,7 @@ if (isset($_SERVER["argv"][1])) {
             echo "\n\n" . 'Package Installation Complete! Thanks for using LightningSkript!' . "\n\n";
 
         } else {
-            echo 'Package not found in LSkript database!' . "\n" . 'Try "brew install ' . $_SERVER["argv"][1] . '"' . "\n\n";
+            echo 'Package not found in LSkript database!' . "\n" . 'Try "apt install ' . $_SERVER["argv"][1] . '"' . "\n\n";
         }
 
     } else {
