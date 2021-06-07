@@ -21,7 +21,7 @@ function install($programpre) {
 
         echo 'Attempting to Install "' . $program . '"';
 
-        exec('brew install ' . $program . ' >/dev/null 2>/dev/null', $output, $return);
+        exec('sudo apt install ' . $program . ' >/dev/null 2>/dev/null', $output, $return);
 
         if (!$return) {
             echo "\n\n\n" . '[SUCCESS] "' . $program . '" Installed' . "\n\n\n";
