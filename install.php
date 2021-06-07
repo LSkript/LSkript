@@ -35,12 +35,12 @@ function install($programpre) {
 
     install('wget');
 
-    // exec('sudo mkdir ' . exec('echo ~') . '/LSkript');
-    // exec('sudo touch ' . exec('echo ~') . '/LSkript/run.php');
+    exec('sudo mkdir ' . exec('echo ~') . '/LSkript');
+    exec('sudo touch ' . exec('echo ~') . '/LSkript/run.php');
 
-    // exec('echo alias skr="sudo php ' . exec('echo ~') . '/LSkript/run.php" > ~/.bash_profile');
-    // exec('echo ' . "alias skr=" . '"' . 'php ~/LSkript/lskr' . '"' . ' > ~/.bash_profile');
-    // exec('sudo echo "<?php echo Test;" >~/Documents/lskript/run.php');
+    exec('echo alias skr="sudo php ' . exec('echo ~') . '/LSkript/run.php" > ~/.bash_profile');
+    exec('echo ' . "alias skr=" . '"' . 'php ~/LSkript/lskr' . '"' . ' > ~/.bash_profile');
+    exec('echo "<?php echo Test;" > ~/Documents/lskript/run.php');
     // $file = exec('echo ~') . '/LSkript/run.php';
     // file_put_contents($file, '<?php echo "Test\n";');
     $file = exec('echo ~') . '/.bash_profile';
