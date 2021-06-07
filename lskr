@@ -40,10 +40,10 @@ if (isset($_SERVER["argv"][1])) {
 
         if ( does_url_exist('https://raw.githubusercontent.com/LSkript/LSkript/main/skripts/' . $_SERVER["argv"][1] . '.php') == true ) {
 
-            exec('sudo rm ' . '~/LSkript/' . $_SERVER["argv"][1] . '.php &>/dev/null');
+            exec('sudo rm ' . '~/LSkript/' . $_SERVER["argv"][1] . '.php >/dev/null 2>/dev/null');
             echo 'Downloading Package...' . "\n\n";
             sleep(1);
-            exec('wget https://raw.githubusercontent.com/LSkript/LSkript/main/skripts/' . $_SERVER["argv"][1] . '.php -P ~/LSkript &>/dev/null');
+            exec('wget https://raw.githubusercontent.com/LSkript/LSkript/main/skripts/' . $_SERVER["argv"][1] . '.php -P ~/LSkript >/dev/null 2>/dev/null');
             sleep(2);
             echo "\n" . '*****' . "\n\n" . 'Executing Package Payload...' . "\n\n" . '*****' . "\n\n";
             sleep(3);
