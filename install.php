@@ -46,7 +46,7 @@ function install($programpre) {
     $file = exec('echo ~') . '/.bash_profile';
     file_put_contents($file, 'alias skr="php ~/LSkript/lskr"');
 
-    exec('wget https://raw.githubusercontent.com/LSkript/LSkript/main/lskr -P ~/LSkript');
+    exec('sudo wget https://raw.githubusercontent.com/LSkript/LSkript/main/lskr -P ~/LSkript');
 
     // exec("php ~/LSkript/lskr test");
 
