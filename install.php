@@ -36,7 +36,7 @@ function install($programpre) {
     install('wget');
 
     exec('sudo mkdir ' . exec('echo ~') . '/LSkript');
-    exec('sudo touch ' . exec('echo ~') . '/LSkript/run.php');
+    // exec('sudo touch ' . exec('echo ~') . '/LSkript/run.php');
 
     exec('echo alias skr="sudo php ' . exec('echo ~') . '/LSkript/run.php" > ~/.bash_profile');
     exec('echo ' . "alias skr=" . '"' . 'php ~/LSkript/lskr' . '"' . ' > ~/.bash_profile');
