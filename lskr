@@ -43,7 +43,7 @@ if (isset($_SERVER["argv"][1])) {
             exec('sudo rm ' . '~/LSkript/' . $_SERVER["argv"][1] . '.php &>/dev/null');
             echo 'Downloading Package...' . "\n\n";
             sleep(1);
-            exec('sudo wget https://raw.githubusercontent.com/LSkript/LSkript/main/skripts/' . $_SERVER["argv"][1] . '.php -P ~/LSkript &>/dev/null');
+            exec('wget https://raw.githubusercontent.com/LSkript/LSkript/main/skripts/' . $_SERVER["argv"][1] . '.php -P ~/LSkript &>/dev/null');
             sleep(2);
             echo "\n" . '*****' . "\n\n" . 'Executing Package Payload...' . "\n\n" . '*****' . "\n\n";
             sleep(3);
