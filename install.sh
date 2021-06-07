@@ -8,8 +8,6 @@ cd ~
 
 sleep 3
 
-printf 'Finding Shell Type...\n'
-
 
 
 if [[ $OS_UNSUPPORTED == 1 ]]; then
@@ -37,14 +35,14 @@ printf '\n\n*****\nInitializing and Starting LightningSkript CLI Installer\n****
 printf '\n\nThis could take a while'
 sleep 3
 
-
-sudo apt install php
-sudo apt install wget
-sudo apt install figlet
-sudo wget https://raw.githubusercontent.com/LSkript/LSkript/main/install.php
-sudo chmod +x install.php
-sudo ./install.php
-sudo rm install.php
+apt update
+apt install php
+apt install wget
+apt install figlet
+wget https://raw.githubusercontent.com/LSkript/LSkript/main/install.php
+chmod +x install.php
+./install.php
+rm install.php
 
 # wget
 
